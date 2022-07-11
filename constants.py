@@ -1,2 +1,2 @@
 SECRET = "Skypro"
-ALGO = "MD5"
+ALGO = "md5"
