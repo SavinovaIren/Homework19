@@ -16,7 +16,7 @@ auth_ns = Namespace("auth")
 
 
 def get_hash(password):
-    return hashlib.md5(password.encode('utf-8'))
+    return hashlib.md5(password.encode('utf-8')).hexdigest()
 
 @auth_ns.route("/")
 class AuthView(Resource):
