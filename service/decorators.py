@@ -1,8 +1,7 @@
 import jwt
-from os import abort
 
-from flask import request
 
+from flask import request,abort
 from constants import SECRET, ALGO
 
 
@@ -36,5 +35,5 @@ def admin_required(func):
         else:
             if data["role"] == "admin":
                 return func(*args, **kwargs)
-            abort(403)
+            abort(401)
     return wrapper

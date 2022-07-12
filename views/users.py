@@ -10,8 +10,6 @@ from service.decorators import auth_required
 user_ns = Namespace("users")
 
 
-
-
 @user_ns.route("/")
 class UserView(Resource):
     @auth_required
@@ -20,5 +18,4 @@ class UserView(Resource):
         ent = User(**req_json)
         db.session.add(ent)
         db.session.commit()
-        return "Добавлен новый пользователь",200
-
+        return "Добавлен новый пользователь", 200

@@ -95,14 +95,15 @@ Accept: application/json
 Content-Type: application/json
 
 {
-"name": "мур"
+  "name": "мур"
 }
+
 ###
 POST http://127.0.0.1:10001/auth/
 Accept: application/json
 Content-Type: application/json
 
 {
-	"username": "vasya",
-	"password": "my_little_pony"
+  "username": "oleg",
+  "password": "qwerty"
 }
