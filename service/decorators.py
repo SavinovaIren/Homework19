@@ -1,7 +1,6 @@
 import jwt
 
-
-from flask import request,abort
+from flask import request, abort
 from constants import SECRET, ALGO
 
 
@@ -17,6 +16,7 @@ def auth_required(func):
             print("JWT Decode Exception", e)
             abort(401)
         return func(*args, **kwargs)
+
     return wrapper
 
 
@@ -28,12 +28,13 @@ def admin_required(func):
         data = request.headers['Authorization']
         token = data.split("Bearer ")[-1]
         try:
-            jwt.decode(token, SECRET, algorithms=[ALGO])
+            data_ = jwt.decode(token, SECRET, algorithms=[ALGO])
         except Exception as e:
             print("JWT Decode Exception", e)
             abort(401)
         else:
-            if data["role"] == "admin":
+            if data_["role"] == "admin":
                 return func(*args, **kwargs)
             abort(401)
+
     return wrapper

@@ -104,6 +104,14 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "username": "oleg",
-  "password": "qwerty"
+  "username": "vasya",
+  "password": "my_little_pony"
+}
+###
+PUT http://127.0.0.1:10001/auth/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "refresh_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InZhc3lhIiwicGFzc3dvcmQiOiJmMWYyOGUzZjdmZGNjNzAwMTgwNGJjODExOWZmYzQ2NTA4YzZhMmY1MGUyZGFjMjliZjc5ZTI5YmExNTNiYTliIiwiZXhwIjoxNjY4ODk1MzA2fQ.UDzpIqeHA7rPBKbH-0uEayaeuSUco4gqWblr_FVLoBs"
 }
